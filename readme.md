@@ -6,7 +6,7 @@ This repo is that I collected and practiced on jupyter notebook from many blogs 
 
 I use docker to create the environment, you can use the follow code to initialize the environment.
 
-```bash
+``` bash
 git clone git://github.com/wadehuang36/notebooks
 
 docker run -d --name notebooks -v ./notebooks:/notebooks -p 8888:8888 kaggle/python /bin/bash -c "jupyter notebook --notebook-dir=/notebooks --ip='*' --port=8888 --no-browser"
