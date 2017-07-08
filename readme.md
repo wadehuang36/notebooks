@@ -25,3 +25,11 @@ docker start notebooks
 ```
 
 Kaggle has provide a python image which has included a lot of machine learning packages such as numpy and sklearn. It saves a lot of time to create a brand-new environment by ourselves. I recommend you can you it as well.
+
+### TensorBoard
+
+[TenserBoard](https://github.com/tensorflow/tensorflow/blob/r1.2/tensorflow/tensorboard/README.md) is Visualization Tool of TenserFlow, if you want to use TensorBoard, you can use this commend to start the service.
+
+```
+docker run -d --name tensorboard -v ./notebooks:/notebooks -p 6006:6006 kaggle/python /bin/bash -c "tensorboard --logdir=/notebooks/tensorflow-logs"
+```
