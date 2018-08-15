@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "build:live": "tsc -w -p ."
   },
   "dependencies": {
     "@types/code": "4.0.4",

@@ -14,7 +14,7 @@
                 "-r",
                 "ts-node/register",
                 "--inspect-brk=9229",
-                "018. 4sum.ts"
+                "019. Remove Nth Node From End of List.ts"
             ],
             "port": 9229
         }
