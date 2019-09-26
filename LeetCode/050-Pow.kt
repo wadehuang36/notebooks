@@ -1,6 +1,30 @@
 /**
  * from https://leetcode.com/problems/powx-n/
  * Implement pow(x, n), which calculates x raised to the power n (xn).
+ * 
+ * This solution use binany operations, for example
+ * 10 in binary form is "1 0 1 0"
+ * and we use "and" operator with 1 to it needs times one more time
+ * and we use "shr" operator to shift right 1 bit, so "1 0 1 0" becomes "1 0 1"
+ * 
+ * each while loop, cumulation value, for example 4-bit cumulation for 2 is 2, 4, 16, 256
+ * 
+ * So for 2^10 is
+ * 
+ * 1   0    1   0
+ * 256 16   4   2
+ * --------------
+ * 
+ * 4 * 256 = 1024
+ * 
+ * So for 2^11 is
+ * 
+ * 1   0    1   1
+ * 256 16   4   2
+ * --------------
+ * 
+ * 2 * 4 * 256 = 2048
+ * 
  **/
 class Solution {
     fun myPow(x: Double, n: Int): Double {
@@ -8,6 +32,9 @@ class Solution {
 
         var result = 1.0
         var cumulation = x
+
+        // Kolint has Math.asb(-2147483648) = -2147483648, probably it is a bug or Integer overflow in Java
+        // So change to long
         var t = Math.abs(n.toLong())
 
         while (t > 0) {
