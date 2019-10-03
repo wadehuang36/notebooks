@@ -8,7 +8,7 @@
  * 3. put the last value of the queue to result for each loop
  **/
 
-class Solution {
+class Solution199 {
     fun rightSideView(root: TreeNode?): List<Int> {
         var result = mutableListOf<Int>()
 
@@ -44,11 +44,10 @@ class TreeNode(var `val`: Int) {
 
 // testing
 fun test(inputs: List<Int?>, expect: List<Int>) {
-
     var root = buildTree(inputs)
-    var actual = Solution().rightSideView(root)
+    var actual = Solution199().rightSideView(root)
 
-    println("actual: $actual, except:$expect")
+    println("actual: $actual, except:$expect, result:${expect.toIntArray().contentEquals(actual.toIntArray())}")
 }
 
 fun buildTree(inputs: List<Int?>): TreeNode? {

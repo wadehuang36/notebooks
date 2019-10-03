@@ -38,7 +38,7 @@
  * 
  **/
 
-class Solution {
+class Solution050 {
     fun myPow(x: Double, n: Int): Double {
         if (n == 0) return 1.0
 
@@ -69,7 +69,7 @@ class Solution {
 
 // testing
 fun test(x: Double, n: Int, t: Double) {
-    var actual = Solution().myPow(x, n)
+    var actual = Solution050().myPow(x, n)
     println("x: $x, n: $n, actual: $actual, except:$t")
 }
 

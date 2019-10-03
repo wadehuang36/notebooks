@@ -19,7 +19,7 @@
  * 3. the check the same age, if count > 0, it true; total += count * (count - 1)
  * 4. check the ages below to meet the conidtion not(b > a)
  **/
-class Solution {
+class Solution825 {
     fun numFriendRequests(ages: IntArray): Int {
         var total = 0
         var ageMap = IntArray(121)
@@ -66,7 +66,7 @@ class Solution {
 
 // testing
 fun test(ages: IntArray, total: Int) {
-    var actual = Solution().numFriendRequests(ages)
+    var actual = Solution825().numFriendRequests(ages)
     println("actual: $actual, except:$total, result:${actual == total}")
 }
 
