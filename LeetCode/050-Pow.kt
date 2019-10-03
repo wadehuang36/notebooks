@@ -2,7 +2,8 @@
  * from https://leetcode.com/problems/powx-n/
  * Implement pow(x, n), which calculates x raised to the power n (xn).
  * 
- * This solution use binany operations, for example
+ * ---------------------------------
+ * This solution use bit operations, for example
  * 10 in binary form is "1 0 1 0"
  * and we use "and" operator with 1 to it needs times one more time
  * and we use "shr" operator to shift right 1 bit, so "1 0 1 0" becomes "1 0 1"
@@ -36,6 +37,7 @@
  * 6561 * 81 * 9 = 4782969 = 3 ^ 8 + 4 + 2
  * 
  **/
+
 class Solution {
     fun myPow(x: Double, n: Int): Double {
         if (n == 0) return 1.0
