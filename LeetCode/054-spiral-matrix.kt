@@ -69,7 +69,7 @@ fun test(input: Array<IntArray>, expect: List<Int>) {
     val actual = Solution054().spiralOrder(input)
 
     val spend = System.currentTimeMillis() - start
-    println("spend: $spend ms, actual: $actual, expect: $expect")
+    println("spend: $spend ms, result:${actual.contentEquals(expect)}, actual: $actual, expect: $expect")
 }
 
 fun main() {
@@ -90,7 +90,7 @@ fun main() {
             intArrayOf(1, 2, 3),
             intArrayOf(4, 5, 6)
         ),
-        listOf(1, 2, 3, 6, 4, 5)
+        listOf(1, 2, 3, 6, 5, 4)
     )
 
     test(

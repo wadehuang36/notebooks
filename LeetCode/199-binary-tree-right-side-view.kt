@@ -10,10 +10,10 @@
 
 class Solution199 {
     fun rightSideView(root: TreeNode?): List<Int> {
-        var result = mutableListOf<Int>()
+        val result = mutableListOf<Int>()
 
         if (root != null) {
-            var queue = mutableListOf<TreeNode>(root)
+            val queue = mutableListOf<TreeNode>(root)
 
             while (queue.isNotEmpty()) {
                 // the last node is the first right node 
@@ -21,7 +21,7 @@ class Solution199 {
 
                 // put the children nodes to queue
                 for (index in 1..queue.size) {
-                    var node = queue.removeAt(0)
+                    val node = queue.removeAt(0)
                     if (node.left != null) {
                         queue.add(node.left!!)
                     }
@@ -44,22 +44,25 @@ class TreeNode(var `val`: Int) {
 
 // testing
 fun test(inputs: List<Int?>, expect: List<Int>) {
-    var root = buildTree(inputs)
-    var actual = Solution199().rightSideView(root)
+    val start = System.currentTimeMillis()
 
-    println("actual: $actual, except:$expect, result:${expect.toIntArray().contentEquals(actual.toIntArray())}")
+    val root = buildTree(inputs)
+    val actual = Solution199().rightSideView(root)
+
+    val spend = System.currentTimeMillis() - start
+    println("spend: $spend ms, result:${actual.contentEquals(expect)}, actual: $actual, except:$expect")
 }
 
 fun buildTree(inputs: List<Int?>): TreeNode? {
-    var tree = mutableListOf<TreeNode>()
+    val tree = mutableListOf<TreeNode>()
 
     for (index in 0..inputs.size - 1) {
-        var node = TreeNode(inputs[index] ?: 0)
+        val node = TreeNode(inputs[index] ?: 0)
         tree.add(node)
 
         if (index > 0) {
-            var parentIndex = Math.ceil(index.toDouble() / 2).toInt() - 1
-            var parent = tree[parentIndex]
+            val parentIndex = Math.ceil(index.toDouble() / 2).toInt() - 1
+            val parent = tree[parentIndex]
             if (index % 2 == 1) {
                 parent.left = node
             } else {

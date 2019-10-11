@@ -13,7 +13,7 @@
  *
  * How many total friend requests are made?
  * ---------------------------------
- * 
+ *
  * 1. the soultion is mapping a map of age by first, for example [16,16] = [16] = 2
  * 2. the crawl the age from 0 to 120
  * 3. the check the same age, if count > 0, it true; total += count * (count - 1)
@@ -65,16 +65,19 @@ class Solution825 {
 }
 
 // testing
-fun test(ages: IntArray, total: Int) {
-    var actual = Solution825().numFriendRequests(ages)
-    println("actual: $actual, except:$total, result:${actual == total}")
+fun test(input: IntArray, expect: Int) {
+    val start = System.currentTimeMillis()
+    val actual = Solution825().numFriendRequests(input)
+
+    val spend = System.currentTimeMillis() - start
+    println("spend: $spend ms, result:${actual == expect}, actual: $actual, except:$expect")
 }
 
 fun main(args: Array<String>) {
-    test(intArrayOf(8, 24), 2)
-    // test(intArrayOf(16, 16, 16), 6)
-    // test(intArrayOf(18, 16, 17), 2)
-    // test(intArrayOf(20, 30, 100, 110, 120), 3)
+    test(intArrayOf(8, 24), 0)
+    test(intArrayOf(16, 16, 16), 6)
+    test(intArrayOf(18, 16, 17), 2)
+    test(intArrayOf(20, 30, 100, 110, 120), 3)
     test(intArrayOf(8, 85, 24, 85, 69), 4)
 }
 

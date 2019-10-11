@@ -53,7 +53,7 @@ fun test(board: Array<CharArray>, expect: Boolean) {
     val actual = Solution036().isValidSudoku(board)
 
     val spend = System.currentTimeMillis() - start
-    println("spend: $spend ms, actual: $actual, expect: $expect")
+    println("spend: $spend ms, result:${actual == expect}, actual: $actual, expect: $expect")
 }
 
 fun main() {
